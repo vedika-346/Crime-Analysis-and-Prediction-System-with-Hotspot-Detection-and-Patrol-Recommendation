@@ -1,1 +1,13 @@
 # Crime-Analysis-and-Prediction-System-with-Hotspot-Detection-and-Patrol-Recommendation
+This project presents a machine learning-driven crime intelligence system designed to analyze historical crime data, perform spatio-temporal pattern mining, predict crime categories, detect geographic hotspots, and generate data-driven patrol recommendations. The system is implemented using the Chicago crime dataset and integrates supervised learning, unsupervised clustering, anomaly detection, and interactive visualization into a unified analytical framework.
+
+The preprocessing pipeline involves data cleaning, handling missing values, and filtering spatial bounds. Feature engineering is performed to extract temporal attributes such as year, month, day, hour, and day of week, along with derived indicators including weekend flags, seasonal encoding, and cyclical transformations using sine and cosine functions. Additional contextual features such as community area, latitude, longitude, arrest status, and encoded crime descriptions are incorporated to improve model performance.
+
+For crime classification, multiple supervised learning algorithms are employed, including Extreme Gradient Boosting (XGBoost), Random Forest, K-Nearest Neighbors (KNN), Gaussian Naive Bayes, and Support Vector Machines (SVM). Class imbalance is addressed using Synthetic Minority Over-sampling Technique (SMOTE). Model performance is evaluated using accuracy, weighted F1-score, macro F1-score, and multi-class ROC-AUC metrics. Model interpretability is achieved using SHAP (SHapley Additive exPlanations) to quantify feature importance.
+
+Spatial clustering is performed using Density-Based Spatial Clustering of Applications with Noise (DBSCAN) to identify crime hotspots, while KMeans clustering is applied to partition the city into patrol zones. Anomaly detection is conducted using Isolation Forest to identify unusual or rare crime patterns.
+
+An area-wise aggregation module computes metrics such as total incidents, dominant crime type, peak crime hour, and anomaly counts for each community area. A composite risk score is formulated by combining normalized crime frequency, temporal weighting, and anomaly contribution. Based on this score, the system generates patrol recommendations indicating high-priority areas and optimal time windows for intervention.
+
+The system is deployed using Streamlit, providing an interactive dashboard for visualization, prediction, hotspot mapping, anomaly exploration, and decision support. The proposed approach enables comprehensive crime analytics and facilitates data-driven strategies for public safety and resource allocation.
+
